@@ -19,17 +19,6 @@ Deployed on **Vercel** and built with a production-focused mindset.
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React (Vite)
-- **State Management:** Zustand
-- **HTTP Client:** Axios
-- **Styling:** Tailwind CSS / DaisyUI
-- **API:** NewsAPI (Developer Plan)
-
----
-
-
 ## 📂 Project Structure (Simplified)
 src/
 ├── Components/
@@ -40,3 +29,16 @@ src/
 ├── newsStore.js
 ├── App.jsx
 └── main.jsx
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Vite)
+- **State Management:** Zustand
+- **HTTP Client:** Axios
+- **Styling:** Tailwind CSS / DaisyUI
+- **API:** NewsAPI (Developer Plan)
+
+
+
