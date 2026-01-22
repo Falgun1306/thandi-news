@@ -15,7 +15,6 @@ Deployed on **Vercel** and built with a production-focused mindset.
 - ⏳ Custom animated loader
 - 📱 Fully responsive UI
 - ⚙️ Environment variable–based API configuration
-- 🚀 Deployed on Vercel
 
 ---
 
