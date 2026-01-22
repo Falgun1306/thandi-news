@@ -1,23 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Wrapper from './Wrapper'
 import useMyStore from '../newsStore'
 
 const NavBar = ({ className }) => {
 
     const setSearch = useMyStore(status => status.setCategory);
-    let timer = null;
+    let timer = useRef(null);
 
     const handleSearch = (e) => {
         const search = e.target.value;
-        if (!search) {
-            setSearch('india')
-        }
 
         clearTimeout(timer);
 
         timer = setTimeout(() => {
-            setSearch(search);
-        }, 1000);
+            setSearch(search || 'india');
+        }, 800);
     }
     return (
         <div className={`bg-base-200 ${className}`}>

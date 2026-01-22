@@ -15,14 +15,26 @@ const News = ({ className }) => {
 
   const fetchNews = async () => {
     setIsLoading(true)
-    const response = await axios(URL)
-    setNews(response.data.articles);
-    setIsLoading(false)
+    try {
+      const response = await axios(URL)
+
+      if (response?.data?.articles) {
+        setNews(response.data.articles);
+      } else {
+        setNews([]);
+      }
+    } catch (error) {
+      console.error("API ERROR:", error?.response?.data || error.message);
+      setNews([]);
+    }finally{
+      setIsLoading(false)
+    }    
   }
 
   //currentPage, newsperPage, lastPostIndex = currentPage*newsperPage, firstPostIndex = lastNewsIndex-postperPage
 
   useEffect(() => {
+    setCurrentPage(1)
     fetchNews();
   }, [category]);
 
