@@ -30,4 +30,12 @@ Deployed on **Vercel** and built with a production-focused mindset.
 ---
 
 ## 📂 Project Structure (Simplified)
-
+src/
+├── Components/
+│ ├── NavBar.jsx
+│ ├── Categories.jsx
+│ ├── Loader.jsx
+│ └── Pages/News.jsx
+├── newsStore.js
+├── App.jsx
+└── main.jsx
