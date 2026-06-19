@@ -1,4 +1,3 @@
-import { use } from "react"
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
@@ -24,13 +23,6 @@ const store = ((set, get) => ({
             category: newsType
         }))
     }
-
-    // numOfPages: 1,
-    // setNumOfPages:(pages)=>{
-    //     set(()=>{
-
-    //     })
-    // }
 }))
 
 const useMyStore = create(
@@ -38,7 +30,5 @@ const useMyStore = create(
         name: "news-storage"
     })
 );
-
-
 
 export default useMyStore;
