@@ -2,16 +2,6 @@ import React from 'react'
 import Wrapper from './Wrapper'
 import useMyStore from '../newsStore'
 
-const categoryIcons = {
-  Business: '💼',
-  Entertainment: '🎬',
-  General: '🌐',
-  Health: '❤️',
-  Science: '🔬',
-  Sports: '⚽',
-  Technology: '💡',
-}
-
 const Categories = ({ className }) => {
   const categories = ['Business', 'Entertainment', 'General', 'Health', 'Science', 'Sports', 'Technology'];
   const setCategory = useMyStore(state => state.setCategory);
@@ -34,7 +24,6 @@ const Categories = ({ className }) => {
               onClick={() => setCategory(category)}
               className={`cat-chip flex items-center gap-1.5 ${activeCategory === category ? 'active' : ''}`}
             >
-              <span>{categoryIcons[category]}</span>
               <span>{category}</span>
             </button>
           ))}
