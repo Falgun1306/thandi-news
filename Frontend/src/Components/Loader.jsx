@@ -2,33 +2,32 @@ import React from "react";
 
 const Loader = ({ className = "" }) => {
   return (
-    <div className={`flex justify-center items-center ${className}`}>
-      <div
-        className="
-          relative flex justify-center items-center aspect-square rounded-full
-          w-16 sm:w-20 md:w-24 lg:w-32
-          animate-[spin_3s_linear_infinite]
-          bg-[conic-gradient(white_0deg,white_300deg,transparent_270deg,transparent_360deg)]
-
-          before:absolute before:aspect-square before:rounded-full
-          before:w-[60%]
-          before:animate-[spin_2s_linear_infinite]
-          before:bg-[conic-gradient(white_0deg,white_270deg,transparent_180deg,transparent_360deg)]
-
-          after:absolute after:aspect-square after:rounded-full
-          after:w-3/4
-          after:animate-[spin_3s_linear_infinite]
-          after:bg-[conic-gradient(#1e3a8a_0deg,#1e3a8a_180deg,transparent_180deg,transparent_360deg)]
-        "
-      >
-        <span
-          className="
-            absolute aspect-square rounded-full
-            w-[85%]
-            animate-[spin_5s_linear_infinite]
-            bg-[conic-gradient(#3b82f6_0deg,#3b82f6_180deg,transparent_180deg,transparent_360deg)]
-          "
-        />
+    <div className={`flex justify-center items-center py-16 ${className}`}>
+      <div className="flex flex-col items-center gap-4">
+        {/* Spinner ring */}
+        <div
+          className="relative w-10 h-10"
+          style={{ animation: 'spin 1s linear infinite' }}
+        >
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <circle cx="20" cy="20" r="16" stroke="rgba(255,255,255,0.08)" strokeWidth="3.5" />
+            <path
+              d="M20 4 A16 16 0 0 1 36 20"
+              stroke="url(#grad)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+            <defs>
+              <linearGradient id="grad" x1="20" y1="4" x2="36" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#60a5fa" />
+                <stop offset="1" stopColor="#a78bfa" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <p className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+          Fetching latest news…
+        </p>
       </div>
     </div>
   );
